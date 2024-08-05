@@ -1,90 +1,358 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <title>REOYANBOX</title>
+    <meta name="description" content="WEBデザイナーとして活動している松藤智明のポートフォリオになります。">
+    <meta name="keywords" content="ポートフォリオ,ウェブデザイン,制作実績">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kaisei+Opti&family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
-      </div>
-    </div>
-  </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
-      </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
-          </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
+
+<body id="top" ontouchstart="">
+
+    <header class="header">
+        <div class="header-inner">
+            <!--site logo-->
+            <div class="site-logo ">
+                <a href="index.html" class="site-logo-link">
+                    <img src="img/R.png" alt="サイトロゴ" class="site-logo-img">
+                    <span class="site-logo-txt">REOYANBOX</span>
+                </a>
+            </div>
+
+            <!-- オーバーレイ -->
+            <div class="overlay"></div>
+
+            <!--global navigation-->
+            <nav class="header-nav" id="nav">
+                <ul class="header-nav-list">
+                    <li class="header-nav-item">
+                        <a href="about.html" class="header-nav-link">
+                            <span class="header-nav-btn">About</span>
+                            <span class="header-nav-btn">自己紹介</span>
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a href="works.html" class="header-nav-link">
+                            <span class="header-nav-btn">Works</span>
+                            <span class="header-nav-btn">制作実績</span>
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a href="blog.html" class="header-nav-link">
+                            <span class="header-nav-btn">Blog</span>
+                            <span class="header-nav-btn">日記</span>
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a href="contact.html" class="header-nav-link">
+                            <span class="header-nav-btn">Contact</span>
+                            <span class="header-nav-btn">問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- ハンバーガーメニューボタン -->
+            <div class="hamburger-menu">
+                <buttun class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </buttun>
+            </div>
+
         </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
-          </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
+    </header>
+
+    <div id="main-visual">
+        <div class="kv">
+            <h1 class="kv-txt">
+                <p class="kv-main-txt">WEB DESIGN</p>
+                <br>
+                <p class="kv-sub-txt">MATSUFUJI TOMOAKI PORTFOLIO</p>
+            </h1>
         </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
-          </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
+    </div>
+
+    <main>
+        <div class="main-wrapper">
+            <!--WorkContent-->
+            <section class="section-wrapper work" id="#work">
+                <h2 class="section-ttl">
+                    <span class="section-main-ttl">Works</span>
+                    <br>
+                    <span class="sectiton-sub-ttl">制作実績</span>
+                </h2>
+                <div class="work-content">
+                    <ul class="work-list">
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#engboy" class="work-content-link">
+                                        <img src="img/engbody_01.PNG" alt="ENGBODYサンプルページ" class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#wdc" class="work-content-link">
+                                        <img src="img/wdc_top.PNG" alt="WDCサンプルページ" class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#aitukuru" class="work-content-link">
+                                        <img src="img/aitukuru_top2.png" alt="AIツクル実績画像" class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#saison" class="work-content-link">
+                                        <img src="img/saison-inter-top.jpg" alt="クレディセゾン実績画像" class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#wimax" class="work-content-link">
+                                        <img src="img/wimax-hikaku01.PNG" alt="WiMAX超比較実績画像" class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#koutaikensa" class="work-content-link">
+                                        <img src="img/koutaikensakit_top_Image Enhancer.jpg" alt="抗体検査キット実績画像"
+                                            class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#reasekai" class="work-content-link">
+                                        <img src="img/reasekai-risa-ai.jpg" alt="リアセカイAI実績画像" class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#ao_debit" class="work-content-link">
+                                        <img src="img/ao_debit_top.PNG" alt="GMOあおぞら銀行法人デビットカード実績画像"
+                                            class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#kantan-web" class="work-content-link">
+                                        <img src="img/kantan-web-01.png" alt="ネット回線の先生実績画像" class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="work-item">
+                            <div class="service-content-box">
+                                <div class="work-content-img-box">
+                                    <a href="works.html#inkan" class="work-content-link">
+                                        <img src="img/inkan_top.PNG" alt="電子印鑑解説ナビ実績画像" class="works-content-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section-wrapper blog" id="blog">
+                <h2 class="section-ttl __blog">
+                    <span class="section-main-ttl">Blog</span>
+                    <br>
+                    <span class="sectiton-sub-ttl">日記</span>
+                </h2>
+                <div class="blog-content">
+                    <ul class="blog-list">
+                        <li class="blog-item">
+                            <div class="blog-content-box">
+                                <div class="blog-content-img-box">
+                                    <a href="blog.html#20240717" class="blog-content-link">
+                                        <img src="img/photo20240717.jpg" alt="ブログサムネイル" class="blog-content-img">
+                                    </a>
+                                </div>
+                                <div class="blog-content-txt js-textTrim">
+                                    <p>
+                                        2024年は挑戦の年にしたいと思っていまして、WEBデザイン技能を磨いて「出来る仕事の幅を広げる」ことが目標です。口で言っても仕方ないので、2024年6月に国家資格の「WEBデザイン技能検定3級」に挑戦しました。
+
+                                        結果として見事合格することができたのでホッとしています。
+
+                                        今回試した学習方法なんですが、過去問を解く　→　間違えた問題を復習する　→　次年度の過去問を解く・・・という風に過去問ループで勉強していました。
+                                    </p>
+                                </div>
+                                <div class="blog-btn">
+                                    <a href="blog.html#20240717" class="blog-btn-link" alt="もっと読むボタン">もっと読む</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="blog-item">
+                            <div class="blog-content-box">
+                                <div class="blog-content-img-box">
+                                    <a href="blog.html#20231012" class="blog-content-link">
+                                        <img src="img/reasekai-risa-ai.jpg" alt="ブログサムネイル02" class="blog-content-img">
+                                    </a>
+                                </div>
+                                <div class="blog-content-txt js-textTrim">
+                                    <p>
+                                        ブシロード様から任天堂Switch用ゲームソフト「リアセカイ」が本日発売となりました。なぜブログに書いているかといいますと、リアセカイの発売を記念して公開されている「リサちゃんAIチャット」というサービスがありまして、そのAI作成を私が担当させていただいたからです。※現在AIチャットは停止中です。このAIはChatGPTを活用したAIでして、PlayGround環境を使って構築いたしました。様々なバックグラウンド、口癖、性格、世界観などの情報を盛り込むことで、リサというキャラクタをうまく再現できました。
+                                    </p>
+                                </div>
+                                <div class="blog-btn">
+                                    <a href="blog.html#20231012" class="blog-btn-link" alt="もっと読むボタン">もっと読む</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="blog-item">
+                            <div class="blog-content-box">
+                                <div class="blog-content-img-box">
+                                    <a href="blog.html#20200611" class="blog-content-link">
+                                        <img src="img/koutaikensakit_top_Image Enhancer.jpg" alt="ブログサムネイル03"
+                                            class="blog-content-img">
+                                    </a>
+                                </div>
+                                <div class="blog-content-txt js-textTrim">
+                                    <p>
+                                        新型コロナウイルスが猛威を振るっている昨今ですが、早急に感染状況を検査することができる抗体検査キットの販売を始めました。この販売サイトに関しましては、私がデザインからコーディングまでを担当させていただきました。
+                                    </p>
+                                </div>
+                                <div class="blog-btn">
+                                    <a href="blog.html#20200611" class="blog-btn-link" alt="もっと読むボタン">もっと読む</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--Service-->
+            <section class="section-wrapper" id="service">
+                <h2 class="section-ttl">
+                    <span class="section-main-ttl">Service</span>
+                    <br>
+                    <span class="sectiton-sub-ttl">仕事内容</span>
+                </h2>
+                <div class="service-content">
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <div class="service-content-box">
+                                <h3 class="service-content-ttl __direction">DIRECTION</h3>
+                                <div class="service-content-img-box">
+                                    <img src="img/icon_direction.png" alt="ディレクション" class="service-content-img">
+                                </div>
+                                <div class="service-content-txt">
+                                    <p>クライアントの要望を尊重しつつ、既存デザインを参考に費用対効果の高いWEBサイトの基盤を築きます。</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-content-box">
+                                <h3 class="service-content-ttl __design">DESIGN</h3>
+                                <div class="service-content-img-box">
+                                    <img src="img/icon_design.png" alt="デザイン" class="service-content-img">
+                                </div>
+                                <div class="service-content-txt">
+                                    <p>既存デザインを基にSEOとCVRを意識したリデザインを得意とし、効果的なWEBサイトを構築します。
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-content-box">
+                                <h3 class="service-content-ttl __coding">CODING</h3>
+                                <div class="service-content-img-box">
+                                    <img src="img/icon_coding.png" alt="コーディング" class="service-content-img">
+                                </div>
+                                <div class="service-content-txt">
+                                    <p>レスポンシブデザインに対応し、あらゆるデバイスでの快適な閲覧を実現します。
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- <section class="section-wrapper toTop">
+            <div class="toTop-content">
+                <a href="#top" class="toTop-content-img">
+                    <img src="img/icon_totop.gif" width="22" height="14" alt="topへ戻る">
+                </a>
+            </div>
+        </section> -->
         </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
-          </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <nav class="footer-nav">
+                    <ul class="footer-nav-list">
+                        <li class="footer-nav-item">
+                            <a href="about.html" class="footer-nav-link">About</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="works.html" class="footer-nav-link">Works</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="blog.html" class="footer-nav-link">Blog</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="contact.html" class="footer-nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copy">
+                    <p class="copy-txt">
+                        <small>(C) 2024 REOYAN . All rights reserved.</small>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
-      </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
-  </footer>
+    </footer>
+
+    <button id="js-pagetop" class="pagetop">
+        <span class="pagetop__arrow"></span>
+    </button>
+
+    <script src="js/lightbox.min.js"></script>
 </body>
+
 </html>
