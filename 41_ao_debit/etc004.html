@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<title>デビットカード徹底解説</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$("#gnavi").load("/debit/gnavi.html");
+			$("#sidenavi").load("/debit/sidenavi.html");
+		})
+	</script>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header-wrap">
+			<div class="wrap logo"><img src="assets/img/logo.png" alt="デビッドカード徹底解説"></div>
+		</div>
+		<div class="hnav-wrap">
+			<input type="checkbox" name="gnav" id="gnav">
+			<label for="gnav" class="gnav-btn"><i></i></label>
+			<nav class="wrap hnav">
+				<label for="gnav">
+					<div id="gnavi"></div>
+
+				</label>
+			</nav>
+		</div>
+	</header>
+
+	<!--パンくずリスト-->
+	<!--
+		<nav class="breadcrumb">
+		<ul>
+			<li><a href="/">デビッドカード徹底解説HOME</a></li>
+			<li><a href="#">カテゴリ名</a></li>
+			<li><a href="./">法人デビットカードのススメ</a></li>
+		</ul>
+	</nav>
+	-->
+	<nav class="breadcrumb">
+		<ul>
+			<li>TOP->ETCカード-><a href="/debit/etc004.html">ETCカードの種類</a></li>
+		</ul>
+	</nav>
+
+	<div class="content-wrap">
+
+		<main class="main">
+			<!--<div class="kv"><img src="assets/img/kv.jpg" alt=""></div>-->
+			<article class="main-content">
+
+				<h1>ETCカードの種類</h1>
+				<p>ETCカードには3種類のカードがあります。</p>
+				<p>まず大きく分けてクレジットカード会社が発行するETCカード、そしてクレジットカード契約をしなくともETCを使えるように、
+					ETCパーソナルカードという高速道路運営会社6社が共同して発行するカードがあります。</p>
+
+				<h2>クレジットカード会社発行するETCカード（分離型）</h2>
+				<p>ETC専用カードと呼ばれ、使用者が契約しているクレジットカード会社から発行されます。メインのクレジットカードとは別にETC専用カードが発行され、
+					車に装着したままで利用でき、メインカードを持ち歩かなくても良いというメリットがあります。</p>
+				<p>料金はメインのクレジットカードの請求と一緒に請求されます。</p>
+
+				<h2>クレジットカード会社発行するETCカード（一体型）</h2>
+				<p>クレジットカードとETCカードが一体になったカードで、有料道路で利用する際は「ETCカード」。
+					車載器から取り外せば一般のクレジットカードとして、普段の買い物や食事、公共料金の支払いなどにも使えます。</p>
+				<p>料金は一体型と同じく、クレジットカードの利用請求と一緒に請求されます。</p>
+
+				<h2>ETCパーソナルカード</h2>
+				<p>ETCパーソナルカードは、クレジットカードを作りたくない方でもETCが使えるメリットがありますが、
+					利用するには保証金（デポジット）の預託が必須条件で、またカード1枚あたり1,200円（税込）の年会費が必要になります。</p>
+				<p>パーソナルカードで利用した通行料金は、銀行などの口座から1ヶ月単位で引き落としとなっています。
+					利用可能額はデポジットの80%相当で、足りなくなる前に追加でデポジットを入金しなくてはなりません。
+					また、パーソナルカードは使用者の所有物ではなく、高速道路運営会社6社の所有物となり、使用者はカードを借りている状態となります。</p>
+
+
+				<div class="gotoTop"><a href="#top">トップへ戻る</a></div>
+
+			</article>
+		</main>
+
+		<div id="sidenavi"></div>
+
+	</div>
+
+	<footer class="footer">
+		<div class="fnav"><a href="/debit/about/">運営者情報</a></div>
+		<div class="copyright">Copyright &copy; デビッドカード徹底解説, All Rights Reserved.</div>
+	</footer>
+
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(funtion({
+			console.log();
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+.content14{
+  margin-top: 60px;
+}
+
+.content14 .sec {
+  margin-bottom: 60px;
+}
+
+.content14 .ttlbx {
+  background: #1C1D1D;
+  padding: 30px;
+  font-size: 34px;
+}
+
+
+.content14 .ttlbx i.rank01 {
+  background-image: url(../img/rank_bg01.png);
+}
+.content14 .ttlbx i.rank02 {
+  background-image: url(../img/rank_bg02.png);
+}
+.content14 .ttlbx i.rank03 {
+  background-image: url(../img/rank_bg03.png);
+}
+.content14 .ttlbx i.rank00 {
+  background-image: url(../img/rank_bg00.png);
+  padding:32px 0 0 32px;
+}
+
+.content14 .ttlbx i {
+  color: #FFFFFF;
+  text-decoration: none;
+  position: absolute;
+  background-size: 102px 145px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 102px;
+  height: 145px;
+  padding: 60px 0 0 32px;
+  font-size: 50px;
+  margin: -48px 0 0 -30px;
+  display: block;
+}
+
+
+.content14 .ttlbx .bx {
+  margin: 0 0 0 80px;
+}
+
+
+.main-content .content14 .ttlbx .bx h2 {
+  border:none;
+  font-size: 26px;
+  margin: 0;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+
+.content14 .box {
+  margin:0;
+  padding: 48px 80px;
+  border-right: 10px solid #cb0032;
+  border-left: 10px solid #cb0032;
+  border-bottom: 10px solid #cb0032;
+}
+
+.content14 .bx01 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.content14 .lbx {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  display: block;
+  justify-content: center;
+}
+
+.content14 .lbx img {
+  width: 85%;
+}
+
+.content14 .rbx {
+  width: 100%;
+}
+
+.content14 .rbx p {
+  font-size: 18px;
+  line-height: 1.7em;
+}
+
+.content14 .rbx .star {
+  font-size: 30px;
+  padding: 10px 20px 0 0;
+}
+
+.content14 .rbx .star p {
+  font-size: 30px;
+}
+
+
+.content14 .rbx .star p span {
+  background: none;
+}
+
+p span.orange {
+  color: #fa7a08;
+  font-weight: bold;
+}
+p span {
+  color: #cb0032;
+  font-weight: bold;
+}
+
+
+.content14 .rbx ul {
+  margin: 0 0 20px;
+}
+
+.content14 .rbx ul li {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+.btnbx {
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+  margin: 0 auto;
+}
+
+.btnbx a.normal {
+  background: #FFFFFF;
+  color: #cb0032;
+}
+
+.btnbx a {
+  display: block;
+  width: 35%;
+  font-weight: bold;
+  background: #cb0032;
+  cursor: pointer;
+  border-bottom:none;
+  border: 4px solid #cb0032;
+  text-align: center;
+  padding: 20px 0 25px 0;
+  width: 100%; /*旧：46%;*/
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: 500;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+}
+.btnbx a:hover {
+   border-bottom: none;
+  }
+  .btnbx a[href*="#"]:hover {
+    border-bottom: none;
+   }
+  
+
+@media (max-width: 770px){
+
+  .content14 .sec {
+    margin-bottom: 8vw;
+}
+
+h1.label + div {
+    margin-top: -18vw;
+}
+
+.content14 .sec .ttlbx {
+  padding: 4vw;
+  font-size: 4.533vw;
+}
+
+.content14 .sec .ttlbx i {
+  background-size: 13.6vw 19.333vw;
+  width: 13.6vw;
+  height: 19.333vw;
+  padding: 6vw 0 0 4.267vw;
+  font-size: 6.667vw;
+  margin: -6.4vw 0 0 -4vw;
+  display: block;
+}
+
+.content14  .sec .ttlbx i.rank00 {
+  padding: 5vw 0 0 4.267vw;
+}
+
+.content14 .sec .ttlbx .bx {
+  margin: 0 0 0 10.667vw;
+}
+
+.content14 .sec .ttlbx h2 {
+  font-size: 4.5vw;
+}
+
+.content14 .sec .box {
+  padding: 5vw 5vw 8vw 5vw;
+}
+
+.content14 .sec .bx01 {
+  display: block;
+  margin-bottom: 2.667vw;
+}
+
+.content14 .sec .lbx {
+  width: 100%;
+  margin: 2vw auto;
+}
+
+.content14 .sec .lbx img {
+  width: 100%;
+}
+
+.content14 .sec .rbx {
+  width: 100%;
+}
+
+.content14 .sec .rbx .star {
+  font-size: 4vw;
+  padding: 2.667vw 2.667vw 2.667vw 0;
+}
+
+.content14 .sec .rbx .star p {
+  font-size: 4vw;
+  margin: 0;
+}
+
+.content14 .sec .rbx p {
+  font-size: 100%;
+  line-height: 1.7em;
+}
+
+.content14 .sec .rbx .star p span.orange {
+  font-weight: bold !important;
+}
+
+.content14 .sec .rbx ul li {
+  font-size: 4vw;
+}
+
+.btnbx a {
+  padding: 2.667vw 0 3.333vw 0;
+  width: 100%; /*旧：46%*/
+  color: #FFFFFF;
+  font-size: 3.7vw;
+  font-weight: bold;
+  -webkit-border-radius: 6.667vw;
+}
+
+
+
+
+}

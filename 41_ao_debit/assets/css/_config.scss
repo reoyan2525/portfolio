@@ -1,0 +1,65 @@
+@charset "utf-8";
+//------------------------------------------------
+//設定ファイル
+
+//スマホ分岐サイズ
+$sp-width: 768px;//480px;
+//PCコンテンツ幅
+$pc-width: 1100px;
+//ブレークポイント
+$breakpoints: (
+	'sp': (max-width: $sp-width),
+	'pc': (min-width: $sp-width + 1),
+) !default;
+$sp: "(max-width: " + $sp-width + ")";
+$pc: "(min-width: " + ($sp-width+1) + ")";
+
+//メディアクエリ
+@mixin pc {
+	@media (min-width: $sp-width + 1) {
+		@content;
+	}
+}
+@mixin tb {
+	@media (min-width: $sp-width + 1) and (max-width: $tb-width) {
+		@content;
+	}
+}
+@mixin sp {
+	@media (max-width: $sp-width) {
+		@content;
+	}
+}
+
+//絶対配置中央
+@mixin abs-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+//clearfix
+@mixin clear {
+	clear: both;
+	content: "";
+	display: block;
+}
+@mixin clearfix {
+	zoom:1;
+	&:after{
+		clear: both;
+		content: "";
+		display: block;
+	}
+}
+
+// mixin
+@mixin mincho {
+	//font-family: 'Sawarabi Mincho', serif;
+	font-family: 'Yu Mincho', YuMincho, serif;
+}
+
+@mixin kerning {
+	font-feature-settings : "palt";
+}
