@@ -1,0 +1,975 @@
+@charset "utf-8";
+
+:root {
+  --pink-color: #EB51C2;
+  --underline-color: #c4c4c4;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Josefin Sans", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.pc {
+  display: none;
+}
+
+.sp {
+  display: block;
+}
+
+/*共通*/
+.btn {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--pink-color);
+  border-radius: 100px;
+  border: 1px solid #707070;
+}
+.btn:hover{
+  opacity: 0.8;
+}
+.btn-link {
+  display: inline-block;
+  width: 100%;
+  padding: 20px 10px;
+}
+
+/*全共通*/
+.bgextend {/*1秒かけて透明から表示させるアニメ*/
+  position: relative;
+  opacity: 0;
+  overflow: hidden; /*はみ出た色要素を隠す*/
+  animation-name: bgextendAnimeBase;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bgextendAnimeBase {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+/*中の要素*/
+/*外側の要素が表示される最中に、中の文字列も表示させるアニメーション*/
+.bgappear {
+  opacity: 0;
+  animation-name: bgextendAnimeSecond;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bgextendAnimeSecond {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*左から右*/
+/*1秒かけて表示される間に背景アニメを表示させる*/
+.bgLRextend::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pink-color); /*伸びる背景色の設定*/
+  animation-name: bgLRextendAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes bgLRextendAnime {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.001% {/*右端を中心に*/
+    transform-origin: right;
+  }
+  100% {/*縮小させる*/
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+/*スクロールをしたら出現する要素にはじめに透過0を指定*/
+.bgappearTrigger,
+.bgLRextendTrigger {
+  opacity: 0;
+}
+
+/********************
+TopPageScroll
+*********************/
+.pagetop {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #fff;
+  /* border: solid 2px var(--pink-color); */
+  border-radius: 50%;
+  display: none;
+  /* display: block; */
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.pagetop__arrow {
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-top: 3px solid var(--pink-color);
+  border-right: 3px solid var(--pink-color);
+  transform: translateY(20%) rotate(-45deg);
+}
+
+/**********************
+header
+**********************/
+.header {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 100;
+}
+
+.header-inner {
+  width: 100%;
+  height: 60px;
+  line-height: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  transition: all 0.6s ease;
+}
+
+.__header-active {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo {
+  height: 12px;
+}
+
+.header-btn {
+  display: none;
+}
+
+.header-btn-link {
+  display: inline-block;
+  padding: 12px 15px;
+}
+
+.__header-active .header-btn {
+  display: block;
+}
+
+
+/**********************
+MainVisual
+**********************/
+.mv {
+  position: relative;
+}
+
+.mv-inner {
+  width: 100%;
+  height: 410px;
+  padding: 150px 20px;
+}
+
+.mv-title {
+  font-family: "Josefin Sans";
+  font-style: italic;
+  font-size: min(11vw, 90px);
+  color: black;
+}
+
+.mv-title-txt {
+  background-color: #fff;
+}
+
+.my-title-and-color {
+  color: var(--pink-color);
+  font-size: min(9vw, 80px);
+}
+
+.mv-subTitle {
+  display: inline-block;
+  font-size: min(3vw, 30px);
+  font-weight: bold;
+  background-color: #fff;
+  margin: 12px 0;
+}
+
+.mv-btn {
+  width: 220px;
+}
+
+.mv-btn.btn {
+  font-size: 13px;
+}
+
+.mv-img-box {
+  width: 70%;
+  height: 410px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  background-image: url(../img/bg_mv.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border: 1px solid var(--underline-color);
+  border-radius: 0 0 0 80px;
+  animation-name:fadeInMvImg;
+  animation-duration: 1s;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInMvImg{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/**********************
+Intro
+**********************/
+.intro {
+  width: 100%;
+  margin-top: -20px;
+}
+
+.intro-inner {
+  padding: 0 20px;
+}
+
+.intro-title {
+  font-family: "Josefin Sans";
+  font-style: italic;
+  font-weight: bold;
+  font-size: 56px;
+  color: var(--pink-color);
+  text-align: center;
+}
+
+.intro-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.intro-subtitle-color {
+  color: var(--pink-color);
+}
+
+.intro-txt {
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.1;
+}
+
+/**********************
+About
+**********************/
+.about {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.about-box-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-box-list+.about-box-list {
+  margin-top: 40px;
+}
+
+.about-box-description {
+  background-color: #fff;
+  margin: -10px 20px;
+  padding: 40px 30px;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-box-subtitle {
+  font-family: "Josefin Sans";
+  color: var(--pink-color);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.about-box-subtitle.__green {
+  color: #00af3a;
+}
+
+.about-box-title {
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+
+.about-box-txt {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.about-btn {
+  width: 300px;
+  margin: 40px auto 0;
+}
+
+/**********************
+Trainer
+**********************/
+.trainer {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.trainer-inner {
+  padding: 40px 20px;
+  background-color: var(--pink-color);
+}
+
+.trainer-heading-box {
+  margin-top: 40px;
+}
+
+.trainer-heading-title {
+  font-family: "Josefin Sans";
+  font-weight: normal;
+  font-size: min(8vw, 90px);
+  color: #fff;
+  line-height: 0.7;
+}
+
+.trainer-heading-subtitle {
+  font-weight: bold;
+  font-size: min(3vw, 90px);
+}
+
+.trainer-body {
+  font-weight: normal;
+  margin-top: 20px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.tab-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tab {
+  width: 50%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.tab.__tab-active {
+  position: relative;
+  font-weight: bold;
+}
+
+.tab.__tab-active::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.tab-content {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.tab-content-area {
+  margin-top: 20px;
+}
+
+.tab-content-img-box {
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.tab-content-txt {
+  padding: 20px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
+.tab-content-list{
+  display:grid;
+  row-gap: 15px;
+}
+
+/* .tab-content-item+.tab-content-item {
+  margin-top: 20px;
+} */
+
+.tab-content.__show {
+  display: block;
+}
+
+/*--------------------------------
+ スクロールエフェクト
+---------------------------------*/
+.fadeUpEffect {
+  opacity: 0;
+}
+
+.fadeUp {
+  opacity: 0;
+  animation-name: fadeUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**********************
+Studio
+**********************/
+.studio {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.studio-inner {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.studio-heading-box {
+  margin-top: 40px;
+}
+
+.studio-heading-title {
+  font-family: "Josefin Sans";
+  font-weight: normal;
+  font-size: min(8vw, 90px);
+  color: #000;
+  line-height: 0.7;
+}
+
+.studio-heading-subtitle {
+  font-weight: bold;
+  font-size: min(3vw, 90px);
+  color: var(--pink-color)
+}
+
+/************************
+Swiper
+**************************/
+.studio-body {
+  /*親コンテナのpositionをrelativeにする*/
+  position: relative;
+  margin-top: 20px;
+}
+
+.swiper-pagination {
+  bottom: -30px !important;
+}
+
+.swiper-wrapper {
+  /* wrapperのサイズを調整 */
+  width: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide {
+  /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.swiper-slide:nth-child(3n + 1) {
+  /*1、4、7、3n+1枚目の背景色 */
+  background-color: #de4439;
+}
+
+.swiper-slide:nth-child(3n + 2) {
+  /*2、5、8、3n+2枚目の背景色 */
+  background-color: #fcd500;
+}
+
+.swiper-slide:nth-child(3n + 3) {
+  /*3、6、9、3n+3枚目の背景色 */
+  background-color: #53c638;
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.swiper-button-next {
+  /*右寄せ*/
+  right: 0;
+}
+
+.swiper-button-prev {
+  /*左寄せ*/
+  left: 0;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  position: absolute;
+  font-size: 12px;
+  color: var(--pink-color);
+  content: '';
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+}
+
+.swiper-button-prev::after {
+  border-top: 3px solid var(--pink-color);
+  border-right: 3px solid var(--pink-color);
+  transform:rotate(-135deg);
+  left:16px;
+}
+
+.swiper-button-next::after {
+  border-top: 3px solid var(--pink-color);
+  border-right: 3px solid var(--pink-color);
+  transform:rotate(45deg);
+  right: 16px;
+}
+
+/**********************
+Price
+**********************/
+.price {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.price-inner {
+  padding: 40px 20px;
+  background-color: var(--pink-color);
+}
+
+.price-heading-box {
+  margin-top: 40px;
+}
+
+.price-heading-title {
+  font-family: "Josefin Sans";
+  font-weight: normal;
+  font-size: min(8vw, 90px);
+  color: #fff;
+  line-height: 0.7;
+}
+
+.price-heading-subtitle {
+  font-weight: bold;
+  font-size: min(3vw, 90px);
+}
+
+.price-body {
+  font-weight: normal;
+  margin-top: 20px;
+  margin-left: -30px;
+  margin-right: -30px;
+  color: #000;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.price-list {
+  position: relative;
+  padding-top: 25px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.price-box {
+  display: inline-block;
+  position: relative;
+  width: 320px;
+  margin-left: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px 20px 20px;
+}
+
+.price-box-title {
+  font-weight: bold;
+  font-size: 26px;
+  color: var(--pink-color);
+  margin-bottom: 10px;
+}
+
+.price-box-price {
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 20px;
+  line-height: 1;
+}
+
+.price-box-price__price {
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.price-box-price__price span {
+  font-size: 36px;
+}
+
+.price-box-price__note {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.price-box-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--underline-color);
+}
+
+.price-box-item span {
+  font-weight: bold;
+}
+
+.price-box-recommend {
+  position: absolute;
+  width: 80%;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--pink-color);
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 50px;
+  border: 2px solid var(--pink-color);
+  padding: 10px;
+}
+
+/******************
+FAQ
+*******************/
+
+.faq {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.faq-inner {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.faq-heading-box {
+  margin-top: 40px;
+}
+
+.faq-heading-title {
+  font-family: "Josefin Sans";
+  font-weight: normal;
+  font-size: min(8vw, 90px);
+  color: #000;
+  line-height: 0.7;
+}
+
+.faq-heading-subtitle {
+  font-weight: bold;
+  font-size: min(3vw, 90px);
+  color: var(--pink-color)
+}
+
+.accordion-list {
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.accordion-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--underline-color);
+}
+
+.accordion-question {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-question::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-20%);
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid var(--pink-color);
+  border-right: 3px solid var(--pink-color);
+  transform:rotate(135deg);
+}
+
+.__acordion-active.accordion-question::after {
+  border-top: 3px solid var(--pink-color);
+  border-right: 3px solid var(--pink-color);
+  transform:rotate(-45deg);
+}
+
+.accordion-answer {
+  display: none;
+}
+
+.__acordion-active .accordion-answer {
+  display: block;
+}
+
+.accordion-question-inner,
+.accordion-answer-inner {
+  display: flex;
+  flex: 0 0 25px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: first baseline;
+  column-gap: 15px;
+}
+
+.accordion-label {
+  display: inline-block;
+  width: 5%;
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--pink-color);
+  text-align: center;
+}
+
+.accordion-txt {
+  width: 95%;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/*************************
+Cta
+*************************/
+.cta {
+  width: 100%;
+  background-color: var(--pink-color);
+}
+
+.cta-body {
+  padding: 30px 20px;
+}
+
+.cta-txt-box {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.cta-txt {
+  color: #fff;
+  font-weight: normal;
+  font-size: 26px;
+}
+
+.cta-txt::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/face-smile-beam-regular.svg);
+}
+
+.cta-btn {
+  display: block;
+  max-width: 300px;
+  margin: 10px auto 0;
+  color: var(--pink-color);
+  background-color: #fff;
+  border: 1px solid var(--pink-color);
+}
+
+.cta-btn-link {
+  display: block;
+}
+
+/*************************
+footer
+*************************/
+.footer {
+  width: 100%;
+}
+
+.footer-logo-box {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: #000;
+}
+
+.footer-logo-link {
+  display: inline-block;
+}
+
+.footer-logo-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 12px;
+}
+/****************************************************
+タブレット用600px以上
+****************************************************/
+@media screen and (min-width: 600px){
+    /* イントロ */
+    .intro-title-br {
+      display: none;
+    }
+
+    .mv-inner {
+      height: 500px;
+      padding: 100px 20px;
+    }
+
+    .mv-img-box{
+      height: 500px;
+    }
+}
+
+/****************************************************
+PC用1025px以上
+****************************************************/
+@media screen and (min-width: 1025px) {
+
+  .pc {
+    display: block;
+  }
+
+  .sp {
+    display: none;
+  }
+
+  .main-wrapper{
+    margin:0 auto;
+    max-width: 1600px;
+  }
+
+  .trainer-heading-title,
+  .studio-heading-title,
+  .price-heading-title,
+  .faq-heading-title
+   {
+    font-size: 64px;
+  }
+  .trainer-heading-subtitle,
+  .studio-heading-subtitle,
+  .price-heading-subtitle,
+  .faq-heading-subtitle{
+    font-size: 20px;
+  }
+
+  /* イントロ */
+  .intro__title {
+    font-size: 108px;
+    margin-bottom: 10px;
+  }
+
+  /* アバウト */
+  .about-box-list {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .about-box-rowreverse{
+    flex-direction: row-reverse;
+  }
+
+.about-box-img-wrapper{
+  width: 70%;
+}
+.about-box-description{
+  width: 500px;
+  position: absolute;
+  right: 0;
+  bottom:-10px;
+}
+.about-box-rowreverse .about-box-description{
+  left: 0;
+}
+
+/*タブコンテンツ*/
+.tab-content-list{
+  display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 15px;
+}
+.tab-content-item{
+  width: 100%;
+}
+.tab-content-item+.tab-content-item {
+  margin-top: 0;
+}
+.price-list{
+  overflow-x:auto;
+}
+}
