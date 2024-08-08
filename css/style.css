@@ -1432,7 +1432,7 @@ TopPageScroll
   }
 
   .footer-nav-item {
-    width: 50%;
+    width: 33%;
     height: 50px;
     border: 1px solid var(--BorderBlackColor);
     text-align: center;
