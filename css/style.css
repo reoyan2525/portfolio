@@ -288,17 +288,32 @@ a.__subContentLink:hover {
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
+  animation-name: kvBlur;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes kvBlur {
+  0% {
+    filter: blur(10px);
+    background-position: top;
+  }
+
+  100% {
+    filter: blur(none);
+    background-position: center center;
+  }
 }
 
 .kv::before {
-  /* 透過した黒を上から重ねるイメージ */
-  background-color: rgba(0, 0, 0, 0.3);
+  content: ' ';
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  content: ' ';
+  /* 透過した黒を上から重ねるイメージ */
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .kv-txt {
