@@ -283,23 +283,27 @@ a.__subContentLink:hover {
   max-width: 1600px;
   height: 420px;
   margin: 0 auto;
-  background-image: url(../img/Eon.png);
-  background-position: center center;
+  opacity: 0;
+  background-image: url(../img/Eon.webp);
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
   animation-name: kvBlur;
   animation-duration: 3s;
+  animation-delay: 0.1s;
   animation-fill-mode: forwards;
 }
 
 @keyframes kvBlur {
   0% {
+    opacity: 0;
     filter: blur(10px);
     background-position: top;
   }
 
   100% {
+    opacity: 1;
     filter: blur(none);
     background-position: center center;
   }
