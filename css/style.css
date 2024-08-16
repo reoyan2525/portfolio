@@ -729,7 +729,7 @@ About.html
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: normal;
   column-gap: 2%;
@@ -737,7 +737,8 @@ About.html
 }
 
 .skills-item {
-  width: 32%;
+  /* width: 32%; */
+  flex:0 0 32%;
 }
 
 .skills-content-box {
@@ -1044,6 +1045,11 @@ TopPageScroll
   height: 16px;
   width: 16px;
   opacity: 0.6;
+}
+
+/*ハンバーガーメニュー*/
+.hamburger-menu{
+  display: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -1514,13 +1520,16 @@ TopPageScroll
   }
 
   /*Skills sp*/
+
+
   .skills-list {
     column-gap: 3%;
     row-gap: 30px;
   }
 
   .skills-item {
-    width: 48%;
+    flex:auto;
+    width: 100%;
   }
 
   .skills-content-img {
