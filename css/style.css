@@ -158,12 +158,12 @@ a.__subContentLink:hover {
   font-family: "Kaisei Opti";
   margin-left: 8px;
   letter-spacing: 3px;
-  font-size: 33px;
+  font-size: 30px;
   font-weight: 300;
   line-height: 33px;
   position: relative;
   /* 相対位置調整のための設定 */
-  top: -2px;
+  top: -1px;
   /* テキストのY軸位置調整 */
 }
 
@@ -506,7 +506,11 @@ WorkContent
   transform: scale(1.2);
   filter: brightness(0.8);
 }
-
+.work-content-ttl{
+  font-size: 24px;
+  text-align: center;
+  padding:10px 0;
+}
 /***************
 BlogContent
 ***************/
@@ -652,6 +656,15 @@ footer
 .footer-nav-item+.footer-nav-item {
   margin-left: 40px;
 }
+.footer-nav-link {
+  display: block;
+  padding:20px 25px;
+  transition:all 0.5s;
+}
+.footer-nav-link:any-link:hover {
+  background-color: #464646;
+  /* ホバー時の背景色 */
+}
 
 /**********************
 About.html
@@ -732,13 +745,12 @@ About.html
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: normal;
-  column-gap: 2%;
-  row-gap: 15px;
+  column-gap: 1%;
+  row-gap: 10px;
 }
 
 .skills-item {
-  /* width: 32%; */
-  flex:0 0 32%;
+  flex:0 0 24%;
 }
 
 .skills-content-box {
@@ -763,7 +775,7 @@ About.html
 }
 
 .skills-content-txt {
-  text-align: left;
+  text-align: center;
   margin-top: 20px;
   line-height: 1.8;
   letter-spacing: 1px;
@@ -783,19 +795,26 @@ Works html
   text-align: center;
   padding: 0;
   margin-top: 20px;
+  width: 49%;
+}
+@media screen and (max-width:767px) {
+  .works-content-img-boxes {
+    width: 100%;
+  }
 }
 
 .works-content-img-list {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  column-gap: 2%;
+  column-gap: 10px;
+  row-gap: 10px;
 }
 
 .works-content-img-item {
-  width: 25%;
+  width: 48%;
   height: 15vw;
   border: 1px solid var(--BorderBlackColor);
   border-radius: 10px;
@@ -842,9 +861,10 @@ Works html
 .works-content-ttl {
   display: inline-block;
   width: 100%;
-  margin-top: 20px;
-  padding-left: 10px;
-  padding-bottom: 5px;
+  margin-top: 10px;
+  padding-top:10px;
+  padding-left: 20px;
+  padding-bottom: 15px;
   font-size: 24px;
   font-weight: bold;
   border-bottom: 1px solid var(--main-BlackColor);
@@ -853,11 +873,16 @@ Works html
 
 /*見出しに自動付与*/
 .works-content-item .works-content-ttl::before {
-  content: "実績" counter(mycounter, decimal-leading-zero)":";
+  content: "実績" counter(mycounter, decimal-leading-zero)" : ";
 }
 
 .works-content-txt-box {
-  margin-top: 20px;
+  width: 48%;
+}
+@media screen and (max-width:767px) {
+  .works-content-txt-box {
+    width: 100%;
+  }
 }
 
 .works-content-txt {
@@ -867,6 +892,20 @@ Works html
 
 .works-content-txt a {
   color: #0000ff;
+}
+
+/*画像とテキストのFLEX*/
+.works-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: top;
+}
+@media screen and (max-width:767px) {
+  .works-container{
+    flex-direction: column;
+  }
 }
 
 .works-content-item+.works-content-item {
@@ -1257,12 +1296,12 @@ TopPageScroll
   }
 
   .site-logo-img {
-    width: 4vw;
-    height: 4vw;
+    width: 30px;
+    height: 30px;
   }
 
   .site-logo-txt {
-    font-size: 4vw;
+    font-size: 18px;
     top: -1px;
     /*logo画像との位置調整*/
   }
@@ -1381,7 +1420,7 @@ TopPageScroll
 
   .works-content-img-item {
     width: 49%;
-    max-height: 20vw;
+    height: 30vw;
   }
 
   /*blog  sp*/
