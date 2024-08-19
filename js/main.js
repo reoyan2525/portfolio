@@ -43,17 +43,16 @@ $(function () {
         isMenuOpen = !isMenuOpen;
         $(this).toggleClass('open');
         $('.header-nav').stop().slideToggle(500);
-        $overlay.toggle();
 
         if (isMenuOpen) {
             // メニューが開いているときは透明度を解除
             $header.removeClass('header-transparent');
             $('body').addClass('body-no-scroll');
-            $overlay.css('opacity', 1).show();
+            $overlay.stop().fadeIn(500); // 0.5秒かけてオーバーレイを表示
         } else {
             // メニューが閉じた後に透明度を再設定
             $('body').removeClass('body-no-scroll');
-            $overlay.css('opacity', 0).hide();
+            $overlay.stop().fadeOut(500); // 0.5秒かけてオーバーレイを非表示
 
             var scrollPosition = $(window).scrollTop();
             if (scrollPosition > headerHeight * 0.1) {
@@ -68,7 +67,7 @@ $(function () {
         $hamburgerMenu.removeClass('open');
         $('.header-nav').slideUp(500);
         $('body').removeClass('body-no-scroll');
-        $(this).css('opacity', 0).hide();
+        $overlay.stop().fadeOut(500);
 
         var scrollPosition = $(window).scrollTop();
         if (scrollPosition > headerHeight * 0.1) {
@@ -79,7 +78,7 @@ $(function () {
 
 
 /*ブログ一覧のテキストはみだし対応 */
-$(function textTrim() {
+$(function() {
     $('.js-textTrim').each(function () {
         // テキストエリアの高さ取得
         var parentHeight = $(this).height();
@@ -94,4 +93,3 @@ $(function textTrim() {
 
     });
 });
-textTrim();
